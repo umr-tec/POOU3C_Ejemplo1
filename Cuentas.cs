@@ -7,6 +7,42 @@ namespace POOU3C_Ejemplo1
         // ¿Qué contiene una clase?
         // Miembros: Campos, Métodos, Contructores, Propiedades, Destrctores
 
+        //Miembros de tipo de Campo
+        #region Campos
+        string numeroCuentaCliente, nombreCliente,
+            primerApellidoCliente, segundoApellidoCliente;
+        string nipCliente, curpCliente, rfcCliente, descripcionAccion;
+        double saldoActualCliente, saldoAneriorCliente;
+        string direccionFiscalBanco, numeroTelefonoCliente, emailCliente;
+        string tipoDivisaCuenta;
+        DateTime fechaNaciminetoCliente;
+        #endregion
+
+        #region Constrcutores
+        public Cuentas() { }
+        public Cuentas(string nombreCliente,
+            string primerApellidoCliente,
+            string segundoApellidoCliente,
+            string numeroTelefonoCliente,
+            string curpCliente)
+        {
+            this.nombreCliente = nombreCliente;
+            this.primerApellidoCliente = primerApellidoCliente;
+            this.segundoApellidoCliente = segundoApellidoCliente;
+            this.numeroTelefonoCliente = numeroTelefonoCliente;
+            this.curpCliente = curpCliente;
+        }
+        #endregion
+
+        #region Metodos
+
+        //Método para crear una cuenta
+        public bool AgregarCuenta() {
+
+            return true;
+        }
+
+
         //Métodos
         public int CalcularCosto() {
             return 10+10;
@@ -30,11 +66,12 @@ namespace POOU3C_Ejemplo1
             Console.BackgroundColor = ConsoleColor.Green;
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.Title = "BancoTec";
-            Console.WindowHeight = 40;
+            Console.WindowHeight = 20;
             Console.WindowWidth = 100;
             Console.Clear();
         }
 
+        #endregion
     }
     /*
         Participaciones:
