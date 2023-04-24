@@ -38,6 +38,22 @@ namespace POOU3C_Ejemplo1
 
         //Método para crear una cuenta
         public bool AgregarCuenta() {
+            string opcionElegida;
+            ConsoleKeyInfo keyInfo;
+            Console.WriteLine("Módulo de administración de cuentas bancarias \n");            
+            Console.WriteLine("Elije una de las siguientes opciones: \n");
+            Console.WriteLine("\t 1. Agregar una cuenta. \n");
+            keyInfo = Console.ReadKey();
+
+            if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.NumPad1)
+            {
+                Console.WriteLine("Da de alta la cuenta del cliente con CURP: {0}",curpCliente);
+                curpCliente = Console.ReadLine();
+            }
+            else {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Selecciona una opcion valida");
+            }           
 
             return true;
         }
@@ -76,6 +92,6 @@ namespace POOU3C_Ejemplo1
     /*
         Participaciones:
           + Aldo, Sergio, Juan Ángel, MArijose
-          - ALexis, UMR, UMR,
+          - ALexis, UMR, UMR, Fernando
      */
 }
