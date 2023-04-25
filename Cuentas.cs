@@ -41,19 +41,28 @@ namespace POOU3C_Ejemplo1
             string opcionElegida;
             ConsoleKeyInfo keyInfo;
             Console.WriteLine("Módulo de administración de cuentas bancarias \n");            
-            Console.WriteLine("Elije una de las siguientes opciones: \n");
-            Console.WriteLine("\t 1. Agregar una cuenta. \n");
-            keyInfo = Console.ReadKey();
-
-            if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.NumPad1)
+            if (string.IsNullOrEmpty(curpCliente))
             {
-                Console.WriteLine("Da de alta la cuenta del cliente con CURP: {0}",curpCliente);
-                curpCliente = Console.ReadLine();
-            }
-            else {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Error: Selecciona una opcion valida");
-            }           
+                Console.WriteLine("Error: No se a asignado un cliente.");
+            }
+            else
+            {
+                Console.WriteLine("Elije una de las siguientes opciones: \n");
+                Console.WriteLine("\t 1. Agregar una cuenta. \n");
+                keyInfo = Console.ReadKey();
+                if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.NumPad1)
+                {
+                    Console.WriteLine("\n Da de alta la cuenta del cliente con CURP: {0}", curpCliente);
+                    curpCliente = Console.ReadLine();
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Error: Selecciona una opcion valida");
+                }
+            }
+                    
 
             return true;
         }
