@@ -11,7 +11,7 @@ namespace POOU3C_Ejemplo1
         #region Campos
         string numeroCuentaCliente, nombreCliente,
             primerApellidoCliente, segundoApellidoCliente;
-        string nipCliente, curpCliente, rfcCliente, descripcionAccion;
+        string nipCliente, curpCliente = "sdfgh", rfcCliente, descripcionAccion;
         double saldoActualCliente, saldoAneriorCliente;
         string direccionFiscalBanco, numeroTelefonoCliente, emailCliente;
         string tipoDivisaCuenta;
@@ -38,6 +38,7 @@ namespace POOU3C_Ejemplo1
 
         //Método para crear una cuenta
         public bool AgregarCuenta() {
+            bool valorRetorno;
             string opcionElegida;
             ConsoleKeyInfo keyInfo;
             Console.WriteLine("Módulo de administración de cuentas bancarias \n");            
@@ -45,6 +46,7 @@ namespace POOU3C_Ejemplo1
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Error: No se a asignado un cliente.");
+                valorRetorno = false;
             }
             else
             {
@@ -54,18 +56,20 @@ namespace POOU3C_Ejemplo1
                 if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.NumPad1)
                 {
                     Console.WriteLine("\n Da de alta la cuenta del cliente con CURP: {0}", curpCliente);
-                    curpCliente = Console.ReadLine();
+                    numeroCuentaCliente = Console.ReadLine();
+                    valorRetorno = true;
                 }
                 else
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Error: Selecciona una opcion valida");
+                    valorRetorno = false;
                 }
             }
-                    
-
-            return true;
+            return valorRetorno;
         }
+
+
 
 
         //Métodos
