@@ -99,7 +99,22 @@ namespace POOU3C_Ejemplo1
             }
             return resuultado;
         }
-        
+
+        public void Opciones() {
+            string opcionSeleccionada;
+            SpeechSynthesizer speech = new SpeechSynthesizer();
+            speech.Speak("Escribe el digito de la opcion deseada, y luego presiona enter");
+            
+            Console.WriteLine("Módulo de aministración bancaria");
+            Console.WriteLine("Opciones: ");
+            Console.WriteLine("1. Ver información del cliente.");
+            Console.WriteLine("2. Ver información de la cuenta.");
+            Console.WriteLine("3. Agregar cuenta bancaria.");
+            Console.WriteLine("4. Eliminar cuenta bancaria.");
+            Console.WriteLine("5. Salir.");
+            opcionSeleccionada = Console.ReadLine();
+        }
+
         //Métodos
         public int CalcularCosto() {
             return 10+10;
