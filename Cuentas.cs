@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading;
+using System.Speech.Synthesis;
 
 namespace POOU3C_Ejemplo1
 {
@@ -69,9 +71,35 @@ namespace POOU3C_Ejemplo1
             return valorRetorno;
         }
 
-
-
-
+        public bool LogIn() {
+            string usuario, contrasena;
+            string usuario1 = "umr", contrasena1 = "123";
+            bool resuultado;
+            Console.WriteLine("Ingresa tu usuario");
+            usuario = Console.ReadLine();
+            Console.WriteLine("Ingresa tu contraseña");
+            contrasena = Console.ReadLine();
+            if (usuario1 == usuario && contrasena1 == contrasena)
+            {
+                Console.WriteLine("Ingresando .");
+                Thread.Sleep(800);
+                Console.WriteLine("Ingresando ..");
+                Thread.Sleep(800);
+                Console.WriteLine("Ingresando ...");
+                Thread.Sleep(800);
+                Console.WriteLine("Ingresando ....");
+                //objeto de tipo synthesis
+                SpeechSynthesizer speech = new SpeechSynthesizer();
+                speech.Speak("Bienvenido al sistema bancario");
+                resuultado = true;
+            }
+            else
+            {
+                resuultado = false;
+            }
+            return resuultado;
+        }
+        
         //Métodos
         public int CalcularCosto() {
             return 10+10;

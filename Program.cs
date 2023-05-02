@@ -20,16 +20,15 @@ namespace POOU3C_Ejemplo1
             */
             //Mandar llamar el metodo de tipó void
             //cuenta1.CalcularCosto3("Marcador TOP", 3, 20.99);
-            //Mandar llamar el metodo AgregarCuenta
-            bool resultado3 = cuenta1.AgregarCuenta();
-            if (resultado3 == true)
+            //Mandar llamar el metodo AgregarCuenta           
+            if (cuenta1.LogIn())
             {
-                Console.WriteLine("Se agrego la cuenta de forma exitosa");
+                cuenta1.AgregarCuenta();
             }
-            if (resultado3 == false)
+            else
             {
-                Console.WriteLine("NO se agrego la cuenta. :(");
-            }
+                Console.WriteLine("ERROR de inicio de sesión.");
+            }                                        
             Console.ReadKey();
         }
     }
