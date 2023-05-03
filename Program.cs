@@ -23,7 +23,7 @@ namespace POOU3C_Ejemplo1
             //Mandar llamar el metodo AgregarCuenta           
             if (cuenta1.LogIn())
             {
-                cuenta1.AgregarCuenta();
+                cuenta1.Opciones();
             }
             else
             {

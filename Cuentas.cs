@@ -102,17 +102,66 @@ namespace POOU3C_Ejemplo1
 
         public void Opciones() {
             string opcionSeleccionada;
+            char activo = 's';
             SpeechSynthesizer speech = new SpeechSynthesizer();
             speech.Speak("Escribe el digito de la opcion deseada, y luego presiona enter");
-            
-            Console.WriteLine("Módulo de aministración bancaria");
-            Console.WriteLine("Opciones: ");
-            Console.WriteLine("1. Ver información del cliente.");
-            Console.WriteLine("2. Ver información de la cuenta.");
-            Console.WriteLine("3. Agregar cuenta bancaria.");
-            Console.WriteLine("4. Eliminar cuenta bancaria.");
-            Console.WriteLine("5. Salir.");
-            opcionSeleccionada = Console.ReadLine();
+
+            while (activo == 's')
+            {
+                Console.WriteLine("Módulo de aministración bancaria");
+                Console.WriteLine("Opciones: ");
+                Console.WriteLine("1. Ver información del cliente.");
+                Console.WriteLine("2. Ver información de la cuenta.");
+                Console.WriteLine("3. Agregar cuenta bancaria.");
+                Console.WriteLine("4. Eliminar cuenta bancaria.");
+                Console.WriteLine("5. Salir.");
+                opcionSeleccionada = Console.ReadLine();
+                #region OpcionConIf
+                //Seleccionar la opcionSeleccionada con estructura IF
+                //if (opcionSeleccionada == "1")
+                //{
+                //    Console.WriteLine("Seleccionaste la opción 1");
+                //}
+                //if (opcionSeleccionada == "2")
+                //{
+                //    Console.WriteLine("Seleccionaste la opción 2");
+                //}
+                //if (opcionSeleccionada == "3")
+                //{
+                //    Console.WriteLine("Seleccionaste la opción 3");
+                //}
+                //if (opcionSeleccionada == "4")
+                //{
+                //    Console.WriteLine("Seleccionaste la opción 4");
+                //}
+                //if (opcionSeleccionada == "5")
+                //{
+                //    Console.WriteLine("Seleccionaste la opción 5");
+                //}
+                #endregion
+                switch (opcionSeleccionada)
+                {
+                    case "1":
+                        Console.WriteLine("Opción 1");
+                        break;
+                    case "2":
+                        Console.WriteLine("Opción 2");
+                        break;
+                    case "3":
+                        Console.WriteLine("Opción 3");
+                        break;
+                    case "4":
+                        Console.WriteLine("Opción 4");
+                        break;
+                    case "5":
+                        Console.WriteLine("Opción 5");
+                        activo = 'n';
+                        break;
+                    default:
+                        Console.WriteLine("Seleccionaste el Default");
+                        break;
+                }
+            }            
         }
 
         //Métodos
