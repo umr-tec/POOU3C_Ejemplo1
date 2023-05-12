@@ -9,6 +9,7 @@ namespace POOU3C_Ejemplo1
             //Instranciar la clase
             Cuentas cuenta1 = new Cuentas();
             cuenta1.PersonalizarConsola();
+           
             // Mandar llamar los mienbros
             /*
             int resultado = cuenta1.CalcularCosto();
@@ -23,7 +24,7 @@ namespace POOU3C_Ejemplo1
             //Mandar llamar el metodo AgregarCuenta           
             if (cuenta1.LogIn())
             {
-                cuenta1.Opciones();
+                cuenta1.Opciones();              
             }
             else
             {

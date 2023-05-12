@@ -38,8 +38,39 @@ namespace POOU3C_Ejemplo1
 
         #region Metodos
 
+        private void InformacionCliente() {
+            if (string.IsNullOrEmpty(nombreCliente))
+            {
+                Console.WriteLine("ERROR: Para visualizar los datos del cliente, primero debes registrar la información del mismo.");
+            }
+            else
+            {
+                Console.WriteLine("Módulo de Información de Clientes");
+                Console.WriteLine("Datos del cliente:");
+                Console.WriteLine("CURP: {0}. Nombre: {1} {4} {5}. Número Cuenta: {2}. RFC: {3}. ", curpCliente, nombreCliente, numeroCuentaCliente, rfcCliente, primerApellidoCliente, segundoApellidoCliente);
+                Console.WriteLine("Datos de Contacto: Emial: {0}. Teléfono: {1}", emailCliente, numeroTelefonoCliente);
+            }            
+        }
+
+        private void InformacionCuentaCliente()
+        {
+            if (string.IsNullOrEmpty(numeroCuentaCliente))
+            {
+                Console.WriteLine("ERROR: Para visualizar los datos de la cuenta, primero debes registrar una cuenta bancaria.");
+            }
+            else
+            {
+                Console.WriteLine("Módulo de Información de Cuentas");
+                Console.WriteLine("Datos del cliente:");
+                Console.WriteLine("CURP: {0}. Nombre: {1} {4} {5}. Número Cuenta: {2}. RFC: {3}. ", curpCliente, nombreCliente, numeroCuentaCliente, rfcCliente, primerApellidoCliente, segundoApellidoCliente);
+                Console.WriteLine("Datos de cuenta: Cuenta bancaria: {0}. Saldo: {1}", numeroCuentaCliente, saldoActualCliente);
+            }
+        }
+
+
+
         //Método para crear una cuenta
-        public bool AgregarCuenta() {
+        private bool AgregarCuenta() {
             bool valorRetorno;
             string opcionElegida;
             ConsoleKeyInfo keyInfo;
@@ -100,6 +131,18 @@ namespace POOU3C_Ejemplo1
             return resuultado;
         }
 
+        private char Salir() {
+            string opcion;
+            Console.WriteLine("¿Estás seguro que deseas salir de la aplicación?");
+            Console.WriteLine("Presiona s para continuar en el sistema.");
+            Console.WriteLine("Presiona n para salir del sistema.");
+            opcion = Console.ReadLine();
+            Console.Clear();
+            Thread.Sleep(800);
+            Environment.Exit(-1);
+            return Convert.ToChar(opcion);
+        }
+
         public void Opciones() {
             string opcionSeleccionada;
             char activo = 's';
@@ -142,20 +185,21 @@ namespace POOU3C_Ejemplo1
                 switch (opcionSeleccionada)
                 {
                     case "1":
-                        Console.WriteLine("Opción 1");
+                        InformacionCliente();
                         break;
                     case "2":
-                        Console.WriteLine("Opción 2");
+                        InformacionCuentaCliente();
                         break;
                     case "3":
-                        Console.WriteLine("Opción 3");
+                        //Mandar llamar el metodo AgregarCuenta()
+                        AgregarCuenta();
                         break;
                     case "4":
                         Console.WriteLine("Opción 4");
                         break;
                     case "5":
                         Console.WriteLine("Opción 5");
-                        activo = 'n';
+                        activo = Salir();
                         break;
                     default:
                         Console.WriteLine("Seleccionaste el Default");
