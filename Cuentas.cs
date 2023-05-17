@@ -193,7 +193,8 @@ namespace POOU3C_Ejemplo1
                 Console.WriteLine("2. Ver información de la cuenta.");
                 Console.WriteLine("3. Agregar cuenta bancaria.");
                 Console.WriteLine("4. Eliminar cuenta bancaria.");
-                Console.WriteLine("5. Salir.");
+                Console.WriteLine("5. Actualizar datos de la cuenta bancaria.");
+                Console.WriteLine("6. Salir.");
                 opcionSeleccionada = Console.ReadLine();
                 #region OpcionConIf
                 //Seleccionar la opcionSeleccionada con estructura IF
@@ -234,7 +235,25 @@ namespace POOU3C_Ejemplo1
                         Console.WriteLine("Opción 4");
                         break;
                     case "5":
-                        Console.WriteLine("Opción 5");
+                        string opcion;
+                        Console.WriteLine("Selecciona los datos que deseas actualizar");
+                        Console.WriteLine(" 1. Actualizar correo electrónico \n 2. Actualizar correo electrónico y número teléfonico.");
+                        opcion = Console.ReadLine();
+                        switch (opcion)
+                        {
+                            case "1":
+                                Console.WriteLine("ingresa la nueva dirección de correo electrónico");
+                                ActualizarInformacionCliente("umr@");
+                                break;
+                            case "2":
+                                ActualizarInformacionCliente("umr@","9876543");
+                                break;
+                            default:
+                                break;
+                        }
+                        ActualizarInformacionCliente("umr@tecsanpedro.edu.mx", "8713243700");
+                        break;
+                    case "6":                        
                         activo = Salir();
                         break;
                     default:

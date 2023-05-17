@@ -11,7 +11,7 @@ namespace POOU3C_Ejemplo1
             cuenta1.PersonalizarConsola();
 
             //Instancia 2
-            Cuentas cuenta2 = new Cuentas();
+            Cuentas cuenta2 = new Cuentas();            
 
             // Mandar llamar los mienbros
             /*
