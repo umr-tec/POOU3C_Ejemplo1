@@ -16,12 +16,24 @@ namespace POOU3C_Ejemplo1
         string nipCliente, curpCliente = "sdfgh", rfcCliente, descripcionAccion;
         double saldoActualCliente, saldoAneriorCliente;
         string direccionFiscalBanco, numeroTelefonoCliente, emailCliente;
-        string tipoDivisaCuenta;
+        string tipoDivisaCuenta;       
         DateTime fechaNaciminetoCliente;
         #endregion
 
         #region Constrcutores
-        public Cuentas() { }
+        /// <summary>
+        /// Constructor sin parámetros.
+        /// </summary>
+        public Cuentas() { }   
+
+        /// <summary>
+        /// Constructor para cargar información necesaria para un cliente bancario.
+        /// </summary>
+        /// <param name="nombreCliente">Almacenar un nombre valido de cliente.</param>
+        /// <param name="primerApellidoCliente"></param>
+        /// <param name="segundoApellidoCliente"></param>
+        /// <param name="numeroTelefonoCliente"></param>
+        /// <param name="curpCliente"></param>
         public Cuentas(string nombreCliente,
             string primerApellidoCliente,
             string segundoApellidoCliente,
@@ -33,15 +45,36 @@ namespace POOU3C_Ejemplo1
             this.segundoApellidoCliente = segundoApellidoCliente;
             this.numeroTelefonoCliente = numeroTelefonoCliente;
             this.curpCliente = curpCliente;
+           
         }
         #endregion
 
         #region Metodos
+        /// <summary>
+        /// Método para actualziar la información personal de un cliente bancario. 
+        /// </summary>
+        /// <param name="emailCliente">Cargar una dirección de correo electrónico valida: ej. umr@user.com</param>
+        private void ActualizarInformacionCliente(string emailCliente) { 
+            
+        }
 
+        /// <summary>
+        /// Método para actualziar la información personal de un cliente bancario. 
+        /// </summary>
+        /// <param name="emailCliente">Cargar una dirección de correo electrónico valida: ej. umr@user.com</param>
+        /// <param name="numeroTelefonoCliente">Cargar un número teléfonico valido, incluyendo LADA. ej. 8713243700</param>
+        private void ActualizarInformacionCliente(string emailCliente, string numeroTelefonoCliente)
+        {
+
+        }
+
+        /// <summary>
+        /// Método para mostrar la información de un cliente bancario...
+        /// </summary>
         private void InformacionCliente() {
             if (string.IsNullOrEmpty(nombreCliente))
             {
-                Console.WriteLine("ERROR: Para visualizar los datos del cliente, primero debes registrar la información del mismo.");
+                Console.WriteLine("ERROR: Para visualizar los datos del cliente, primero debes registrar la información del mismo.");               
             }
             else
             {
@@ -52,6 +85,9 @@ namespace POOU3C_Ejemplo1
             }            
         }
 
+        /// <summary>
+        /// Método para mostrar la información de una cuenta bancaria correspondiente a un cliente.
+        /// </summary>
         private void InformacionCuentaCliente()
         {
             if (string.IsNullOrEmpty(numeroCuentaCliente))

@@ -9,7 +9,10 @@ namespace POOU3C_Ejemplo1
             //Instranciar la clase
             Cuentas cuenta1 = new Cuentas();
             cuenta1.PersonalizarConsola();
-           
+
+            //Instancia 2
+            Cuentas cuenta2 = new Cuentas();
+
             // Mandar llamar los mienbros
             /*
             int resultado = cuenta1.CalcularCosto();
