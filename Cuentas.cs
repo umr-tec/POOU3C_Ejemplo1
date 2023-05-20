@@ -24,8 +24,9 @@ namespace POOU3C_Ejemplo1
         /// <summary>
         /// Constructor sin parámetros.
         /// </summary>
-        public Cuentas() { }   
-
+        public Cuentas() {
+            
+        }   
         /// <summary>
         /// Constructor para cargar información necesaria para un cliente bancario.
         /// </summary>
@@ -178,8 +179,32 @@ namespace POOU3C_Ejemplo1
             Environment.Exit(-1);
             return Convert.ToChar(opcion);
         }
-
-        public void Opciones() {
+        private void Expediente() {
+            string opcion;
+            Console.WriteLine("Selecciona los datos que deseas actualizar");
+            Console.WriteLine(" 1. Actualizar correo electrónico \n 2. Actualizar correo electrónico y número teléfonico.");
+            opcion = Console.ReadLine();
+            switch (opcion)
+            {
+                case "1":
+                    string nuevoEmail, nuevoCelular;
+                    Console.WriteLine("Ingresa la nueva dirección de correo electrónico");
+                    nuevoEmail = Console.ReadLine();
+                    ActualizarInformacionCliente(nuevoEmail);
+                    break;
+                case "2":                    
+                    Console.WriteLine("Ingresa la nueva dirección de correo electrónico");
+                    nuevoEmail = Console.ReadLine();
+                    Console.WriteLine("Ingresa el nuevo número de celular");
+                    nuevoCelular = Console.ReadLine();
+                    ActualizarInformacionCliente(nuevoEmail,nuevoCelular);
+                    break;
+                default:
+                    break;
+            }
+            ActualizarInformacionCliente("umr@tecsanpedro.edu.mx", "8713243700");
+        }
+        public void Opciones() {            
             string opcionSeleccionada;
             char activo = 's';
             SpeechSynthesizer speech = new SpeechSynthesizer();
@@ -235,23 +260,7 @@ namespace POOU3C_Ejemplo1
                         Console.WriteLine("Opción 4");
                         break;
                     case "5":
-                        string opcion;
-                        Console.WriteLine("Selecciona los datos que deseas actualizar");
-                        Console.WriteLine(" 1. Actualizar correo electrónico \n 2. Actualizar correo electrónico y número teléfonico.");
-                        opcion = Console.ReadLine();
-                        switch (opcion)
-                        {
-                            case "1":
-                                Console.WriteLine("ingresa la nueva dirección de correo electrónico");
-                                ActualizarInformacionCliente("umr@");
-                                break;
-                            case "2":
-                                ActualizarInformacionCliente("umr@","9876543");
-                                break;
-                            default:
-                                break;
-                        }
-                        ActualizarInformacionCliente("umr@tecsanpedro.edu.mx", "8713243700");
+                        Expediente();
                         break;
                     case "6":                        
                         activo = Salir();
